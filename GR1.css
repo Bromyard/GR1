@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor:default;
+}
+
+  .background-entete {
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%);
+    border-radius: 20px; /*tester le radius 50%* radius boite ligne 74*/
+  }
+
+  .entete {
+    display: block;
+    width: 70%;
+    max-height: 270px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1rem;
+  }
+
+  .wrapper {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 80rem;
+  }
+
+  .cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col {
+    width: calc(45% - 2rem);
+    margin: 1rem;
+  }
+
+  .container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .front,
+  .back {
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-position: center;
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align: center;
+    min-height: 280px;
+    height: auto;
+    border-radius: 10px; /*radius rond 50% si box carré / background ligne 115*/
+    color: rgb(190 157 117);
+    font-weight: 500;
+    font-family: Verdana;
+  }
+
+
+  .fb {
+    /* font-size for class .front,.back --> @media screen and (min-width: 1001px) */
+    font-size: 1.3rem;
+  }
+
+  .back {
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%);
+  }
+
+  .back hr {
+    width: 8rem;
+    height: 2px;
+    border: none;
+    background: rgb(226 126 18);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .front:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+    opacity: .1;
+    background-color: #000; /*background si radius rond*/
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }
+
+  .container:hover .front, .container:hover .back {
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .inner {
+    transform: translateY(-50%) translateZ(60px) scale(0.94);
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    outline: 1px solid transparent;
+    perspective: inherit;
+    z-index: 2;
+  }
+
+  .container .back {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+  }
+
+  .container .front {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+  }
+
+  .container:hover .back {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+  }
+
+  .container:hover .front {
+    transform: rotateY(-180deg);
+    transform-style: preserve-3d;
+  }
+
+  .front .inner p {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .fip {
+    /* font-size for class .front .inner p --> @media screen and (min-width: 1001px)*/
+    font-size: 2.5rem;
+  }
+
+  .front .inner p:after {
+    content: '';
+    width: 4rem;
+    height: 2px;
+    position: absolute;
+    background: rgb(226 126 18);
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -.75rem;
+  }
+
+  .front .inner span {
+    color: rgb(190 157 117);
+    font-family: "Montserrat";
+    font-weight: 800;
+  }
+
+  .contact {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    width: 30%;
+    height: 2.5rem;
+    border-radius: 17px;
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%);
+    font-size: 1.5rem;
+    font-family: verdana;
+    color: rgb(190 157 117);
+    transition-duration: 0.1s;
+    cursor: pointer;
+  }
+    button:hover {
+    border: 3.5px solid rgb(190 157 117);
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%); 
+  }
+
+/* data-title for "button title*/
+  [data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+  }
+
+  [data-title]:after {
+    content: attr(data-title);
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%);
+    color:rgb(190 157 117);
+    visibility: hidden;
+    position: absolute;
+    bottom: -.8em;
+    left: 62%;
+    font-size: .7rem;
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  [data-title] {
+    position: relative;
+  }
+
+
+  .pbottom {
+    color: rgb(190 157 117);
+    font-family: Verdana;
+    text-align: center;
+  }
+
+
+@media screen and (min-width: 1001px) {
+  .col {
+    width: calc(50% - 3rem);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .col,
+  .fip {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+
+  .col,
+  .fip {
+    width: 95%;
+    font-size: 1.2rem;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .fb {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .fb {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+}
