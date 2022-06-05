@@ -1,0 +1,390 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor:default;
+}
+
+  .main-container { 
+    max-width: 100%;
+  }
+  .flip-entete {
+    background-color: transparent;
+    width: 90%;
+    height: 20vw;
+    perspective: 1000px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  .flip-entete-inner {
+    background-color:transparent;
+    width: 100%;
+    height: 100%;
+    transition: 3s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+    margin-top: 1vw;
+  }
+
+  .background-entete {
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%);
+    border-radius: 20px;
+    width:100%;
+  }
+
+  .entete-front {
+    display: block;
+    width:70%;
+    height: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1vw;
+  }
+  
+  .entete-back{
+    width: 100%;
+    height: 20vw;
+    border-radius: 20px;
+  }
+
+  .flip-entete:hover .flip-entete-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-entete-front,
+  .flip-entete-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+  }
+
+  .flip-entete-front {
+    background-color: transparent;
+    color: #fff;
+  }
+
+  .flip-entete-back {
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%);
+    border-radius: 20px;
+    transform: rotateY(180deg);
+  }
+
+  .feb {
+    position: absolute;
+    font-family: Verdana;
+    font-weight: 500;
+    text-decoration: none;
+    cursor:pointer;
+  }
+
+  #peinture{
+    margin: 3% 0 0 32%;
+    color:#eb7d7d;   
+    font-size: 4.5vw;    
+  }
+
+  #decoration{
+    margin: 17% 0 0 3%;
+    color:#eacc44;   
+    font-size: 3.3vw;  
+  }
+
+
+  #parements{
+    margin: 16% 0 0 78%;
+    color:#aaffef;   
+    font-size: 2.7vw;  
+  }
+
+  #parquet{
+    margin: 8% 0 0 60%;
+    color:#ff26e8;   
+    font-size: 3.7vw;  
+  }
+
+  #cuisine{
+    margin: 1.5% 0 0 5%;
+    color:#e25f5f;   
+    font-size: 3.2vw;  
+  }
+
+  #sdb{
+    margin: 9.5% 0 0 10%;
+    color:#a2ffa9;   
+    font-size: 2.7vw;  
+  }
+
+  #verriere{
+    margin: 16% 0 0 31%;
+    color:#ffd5d5;   
+    font-size: 2.5vw;  
+  }
+
+  #cloisons{
+    margin: 1.3% 0 0 70%;
+    color:#008798;   
+    font-size: 2.4vw;  
+  }
+
+  #electricite{
+    margin: 15% 0 0 51%;
+    color:#ffaf56;   
+    font-size: 2.2vw;  
+  }
+
+  #plomberie{
+    margin: 7% 0 0 82%;
+    color:#8198ff;   
+    font-size: 2.2vw;  
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top:1vw;
+    max-width:90%;
+    margin-left:auto;
+    margin-right: auto;
+  }
+
+  .card {
+    margin: 1vw;
+  }
+
+  .container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .front,
+  .back {
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-position: center;
+    transition: transform 2.5s cubic-bezier(0.4, 0.2, 0.2, 1); /*back to front*/
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align: center;
+    min-height: 280px;
+    height: auto;
+    border-radius: 10px;
+    color: rgb(190 157 117);
+    font-weight: 500;
+    font-family: Verdana;
+  }
+
+  .back {
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%);
+    font-size: 1.3rem;
+  }
+
+  .back hr {
+    width: 8rem;
+    height: 2px;
+    border: none;
+    background: rgb(226 126 18);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .front:after {  /* si pas d'image front mettre opacity sur 1*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: "~~~Pas d'images front~~";
+    opacity: 0;
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%);
+    -webkit-backface-visibility: idden;
+    backface-visibility: idden;
+    border-radius: 10px;
+  }
+
+  .container:hover .front, .container:hover .back {
+    transition: transform 2.5s cubic-bezier(0.4, 0.2, 0.2, 1); /* front to back*/
+  }
+
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .inner {
+    transform: translateY(-50%) translateZ(40px) scale(0.9);  
+    /* position text vertical - deplacement "3d" du texte en dehors de la card - font-size texte*/
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    /*outline: 2px solid red;*/
+    perspective: inherit;
+    z-index: 2;
+  }
+
+  .container .back {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+  }
+
+  .container .front {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+  }
+
+  .container:hover .back {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+  }
+
+  .container:hover .front {
+    transform: rotateY(-180deg);
+    transform-style: preserve-3d;
+  }
+
+  .front .inner p {
+    margin-bottom: 2rem;
+    position: relative;
+    font-size: 2.5rem;
+  }
+
+  .front .inner p:after {
+    content: '•';
+    width: 4rem;
+    height: 2.5px;
+    position: absolute;
+    background: rgb(226 126 18);
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -.75rem;
+  }
+
+  .front .inner span {
+    color: rgb(190 157 117);
+    font-family: "Montserrat";
+    font-weight: 800;
+  }
+
+  .contact {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  button {
+    width: 30%;
+    height: 2.5rem;
+    border-radius: 17px;
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%);
+    font-size: 1.5rem;
+    font-family: verdana;
+    color: rgb(190 157 117);
+    transition-duration: 0.1s;
+    cursor: pointer;
+  }
+    button:hover {
+    border: 3.5px solid rgb(190 157 117);
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%); 
+  }
+
+  [button-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.8s;
+    visibility: visible;
+  }
+
+  [button-title]:after {
+    content: attr(button-title);
+    width: 6rem;
+    background: #04233f;
+    background: linear-gradient(45deg, #04233f 0%, #154155 100%);
+    color:rgb(190 157 117);
+    visibility: hidden;
+    position: absolute;
+    bottom: -1.9rem;
+    left: 50%;
+    font-size: .8rem;
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  [button-title] {
+    position: relative;
+  }
+
+  .pbottom {
+    color: rgb(190 157 117);
+    font-family: Verdana;
+    text-align: center;
+  }
+
+
+  @media screen and (max-width: 3000px) {
+    .card
+     {
+      width: calc(49% - 2.5rem);
+    }
+  }
+
+
+@media screen and (max-width: 2000px) {
+  .card {
+    width: calc(50% - 2.5rem);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .card,
+  .front .inner p {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+
+  .card,
+  .front .inner p {
+    width: 95%;
+    font-size: 1.2rem;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .back {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 350px) {
+  .back {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+}  
